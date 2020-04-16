@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-04-02 16:27:10
- * @LastEditTime: 2020-04-15 14:38:55
+ * @LastEditTime: 2020-04-16 14:29:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \demo1\src\App.js
@@ -13,7 +13,8 @@ import './assets/css/App.css';
 // import News from './components/News'
 // import Event from './components/event'
 // import EventObj from './components/eventObj'
-import Form from './components/form'
+// import Form from './components/form'
+import Parent from './components/Parent'
 function App() {
   return (
     <div className="App">
@@ -23,7 +24,8 @@ function App() {
      <News /> */}
      {/* <Event/> */}
      {/* <EventObj/> */}
-     <Form/>
+     {/* <Form/> */}
+     <Parent/>
     </div>
   );
 }

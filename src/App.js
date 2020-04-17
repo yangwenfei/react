@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-04-02 16:27:10
- * @LastEditTime: 2020-04-16 14:29:40
+ * @LastEditTime: 2020-04-17 16:30:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \demo1\src\App.js
@@ -14,7 +14,8 @@ import './assets/css/App.css';
 // import Event from './components/event'
 // import EventObj from './components/eventObj'
 // import Form from './components/form'
-import Parent from './components/Parent'
+// import Parent from './components/Parent'
+import Axios from './components/Axios'
 function App() {
   return (
     <div className="App">
@@ -25,7 +26,8 @@ function App() {
      {/* <Event/> */}
      {/* <EventObj/> */}
      {/* <Form/> */}
-     <Parent/>
+     {/* <Parent/> */}
+     <Axios/>
     </div>
   );
 }

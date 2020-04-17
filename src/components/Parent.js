@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-04-16 14:23:14
- * @LastEditTime: 2020-04-16 17:27:54
+ * @LastEditTime: 2020-04-17 15:48:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react\src\components\Parent.js
@@ -18,7 +18,8 @@ import Child from './Child'
      super(props);
      this.state = { 
        msg:'以下是父组件的内容',
-       title:'父组件传到子组件的参数title'
+       title:'父组件传到子组件的参数title',
+       num:1121
       };
    }
    run=()=>{
@@ -33,6 +34,8 @@ import Child from './Child'
    render() {
      return (
       <div>
+        <Child ref='child' num={this.state.num}/>
+        <hr/>
         <Child ref='child' title={this.state.title} run={this.run} parent={this}/>
         <hr/>
         <p>{this.state.msg}</p>

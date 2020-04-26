@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-04-02 16:27:10
- * @LastEditTime: 2020-04-23 15:55:09
+ * @LastEditTime: 2020-04-26 15:52:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \demo1\src\App.js
@@ -26,8 +26,9 @@ import './assets/css/App.css';
 // import list from './components/Order/list'
 // import detail from './components/Order/detail'
 // import login from './components/Order/login'
-import Home from './components/NestedRouting/Home'
-import User from './components/NestedRouting/User'
+// import Home from './components/NestedRouting/Home'
+// import User from './components/NestedRouting/User'
+import routes from './model/router'
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 function App() {
   return (
@@ -59,12 +60,33 @@ function App() {
       {/* <Route exact path="/" component={list}></Route>
       <Route path='/detail/:id' component={detail}/> 
       <Route path='/login' component={login}></Route> */}
-      <header className="header">
+      {/* <header className="header">
       <Link to="/home">首页</Link>
       <Link to='/user'>用户</Link>
       </header>
       <Route path='/home' component={Home}/>
-      <Route path='/user' component={User}/>
+      <Route path='/user' component={User}/> */}
+      <header className="header">
+      <Link to="/">首页</Link>
+      <Link to='/user'>用户</Link>
+      </header>
+      {
+        routes.map((route,index)=>{
+          
+            if(route.exact){
+              return  <Route exact key={index} path={route.path} render={props=>( //路由嵌套的时候父组件给子组件传值的写法。目的是把子路由数组传递给子组件
+                <route.component {...props} routes={route.routes} />
+              )} />
+            }else{
+             return <Route key={index} path={route.path} render={props=>( //路由嵌套的时候父组件给子组件传值的写法。目的是把子路由数组传递给子组件
+                <route.component {...props} routes={route.routes} />
+              )} />
+            }
+           
+          
+          
+        })
+      }
     </div>
     </Router>
     

@@ -1,13 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2020-04-02 16:27:10
- * @LastEditTime: 2020-04-22 10:41:03
+ * @LastEditTime: 2020-04-23 15:55:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \demo1\src\App.js
  */
 import React from 'react';
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
+import {BrowserRouter as Router,Route} from 'react-router-dom'
 // import logo from './assets/imgs/logo.svg';
 import './assets/css/App.css';
 // import Test from  './components/test'
@@ -21,8 +21,14 @@ import './assets/css/App.css';
 // import LifeCycle from './components/LifeCycle'
 // import Router1 from './components/Router/Router1'
 // import Router2 from './components/Router/Router2'
-import News from './components/Params/News'
-import Content from './components/Params/Content'
+// import News from './components/Params/News'
+// import Content from './components/Params/Content'
+// import list from './components/Order/list'
+// import detail from './components/Order/detail'
+// import login from './components/Order/login'
+import Home from './components/NestedRouting/Home'
+import User from './components/NestedRouting/User'
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 function App() {
   return (
     <Router>
@@ -46,9 +52,19 @@ function App() {
       <Route path='/router1' component={Router1}></Route>
       <Route path='/router2' component={Router2}></Route> */}
 
-
+{/* 
       <Route exact path="/" component={News}></Route>
-      <Route path='/content/:id' component={Content}/>
+      <Route path='/content/:id' component={Content}/> */}
+
+      {/* <Route exact path="/" component={list}></Route>
+      <Route path='/detail/:id' component={detail}/> 
+      <Route path='/login' component={login}></Route> */}
+      <header className="header">
+      <Link to="/home">首页</Link>
+      <Link to='/user'>用户</Link>
+      </header>
+      <Route path='/home' component={Home}/>
+      <Route path='/user' component={User}/>
     </div>
     </Router>
     

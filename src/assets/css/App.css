@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .red{
   color:red
 }
@@ -6,6 +7,17 @@
   width: 100px;
   pointer-events: none;
 }
+.header{
+  background:black;
+  height: 30px;
+
+}
+.header a{
+  font-size: 16px;
+  color:#fff;
+  padding:5px 50px;
+}
+
 
 
 
